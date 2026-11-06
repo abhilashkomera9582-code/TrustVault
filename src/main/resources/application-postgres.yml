@@ -8,8 +8,6 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   flyway:
-    user: ${DB_MIGRATION_USER:trustvault_migrator}
-    password: ${DB_MIGRATION_PASSWORD:change-me-migration}
     locations:
       - classpath:db/migration
       - classpath:db/migration-postgresql
