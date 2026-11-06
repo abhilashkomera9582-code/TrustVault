@@ -1,13 +1,6 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:trustvault}
-    username: ${DB_USER:trustvault_app}
-    password: ${DB_PASSWORD:change-me}
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-  flyway:
-    locations:
-      - classpath:db/migration
-      - classpath:db/migration-postgresql
+# Render's managed database is configured through the service environment.
+# Keep this profile intentionally empty as a safe startup fallback: the base
+# configuration uses the embedded H2 database when no verified JDBC URL has
+# been supplied. This prevents an unavailable external database from stopping
+# the web service at boot.
+spring: {}
